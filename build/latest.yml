@@ -1,0 +1,8 @@
+version: 0.1.0-beta
+files:
+  - url: dumka-Setup-0.1.0-beta.exe
+    sha512: bLhjSYzSBa4JlwzmWJZkV+DChodV+4CNdoXhjaQVOOOrhqsv8qeu3LGLVQriPpId/UZS3K096w+U+sxMuQnLvw==
+    size: 71009166
+path: dumka-Setup-0.1.0-beta.exe
+sha512: bLhjSYzSBa4JlwzmWJZkV+DChodV+4CNdoXhjaQVOOOrhqsv8qeu3LGLVQriPpId/UZS3K096w+U+sxMuQnLvw==
+releaseDate: '2024-09-03T07:57:15.077Z'

@@ -1,0 +1,558 @@
+[
+  {
+    "id": "2",
+    "name": "三年级上学期",
+    "words":[
+      {
+        "unit": "1",
+        "english": "nice",
+        "chinese": "令人愉快的；友好的"
+      },
+      {
+        "unit": "1",
+        "english": "ear",
+        "chinese": "耳朵"
+      },
+      {
+        "unit": "1",
+        "english": "hand",
+        "chinese": "手"
+      },
+      {
+        "unit": "1",
+        "english": "eye",
+        "chinese": "眼睛"
+      },
+      {
+        "unit": "1",
+        "english": "mouth",
+        "chinese": "嘴"
+      },
+      {
+        "unit": "1",
+        "english": "arm",
+        "chinese": "胳膊"
+      },
+      {
+        "unit": "1",
+        "english": "can",
+        "chinese": "可以"
+      },
+      {
+        "unit": "1",
+        "english": "share",
+        "chinese": "分享"
+      },
+      {
+        "unit": "1",
+        "english": "smile",
+        "chinese": "微笑"
+      },
+      {
+        "unit": "1",
+        "english": "listen",
+        "chinese": "听；倾听"
+      },
+      {
+        "unit": "1",
+        "english": "help",
+        "chinese": "帮助"
+      },
+      {
+        "unit": "1",
+        "english": "say",
+        "chinese": "说；讲"
+      },
+      {
+        "unit": "1",
+        "english": "and",
+        "chinese": "和；与"
+      },
+      {
+        "unit": "1",
+        "english": "goodbye",
+        "chinese": "再见"
+      },
+      {
+        "unit": "1",
+        "english": "toy",
+        "chinese": "玩具"
+      },
+      {
+        "unit": "1",
+        "english": "friend",
+        "chinese": "朋友"
+      },
+      {
+        "unit": "1",
+        "english": "good",
+        "chinese": "好的"
+      },
+      {
+        "unit": "2",
+        "english": "mum",
+        "chinese": "(口语)妈妈"
+      },
+      {
+        "unit": "2",
+        "english": "dad",
+        "chinese": "(口语)爸爸"
+      },
+      {
+        "unit": "2",
+        "english": "grandma",
+        "chinese": "(外)祖母；奶奶；姥姥；外婆"
+      },
+      {
+        "unit": "2",
+        "english": "grandpa",
+        "chinese": "(外)祖父；爷爷；姥爷；外公"
+      },
+      {
+        "unit": "2",
+        "english": "grandfather",
+        "chinese": "(外)祖父；爷爷；姥爷；外公"
+      },
+      {
+        "unit": "2",
+        "english": "grandmother",
+        "chinese": "(外)祖母；奶奶；姥姥；外婆"
+      },
+      {
+        "unit": "2",
+        "english": "mother",
+        "chinese": "母亲；妈妈"
+      },
+      {
+        "unit": "2",
+        "english": "father",
+        "chinese": "父亲；爸爸"
+      },
+      {
+        "unit": "2",
+        "english": "me",
+        "chinese": "我"
+      },
+      {
+        "unit": "2",
+        "english": "sister",
+        "chinese": "姐；妹"
+      },
+      {
+        "unit": "2",
+        "english": "family",
+        "chinese": "家；家庭"
+      },
+      {
+        "unit": "2",
+        "english": "have",
+        "chinese": "有"
+      },
+      {
+        "unit": "2",
+        "english": "big",
+        "chinese": "大的"
+      },
+      {
+        "unit": "2",
+        "english": "cousin",
+        "chinese": "堂(表)兄弟；堂(表)姐妹"
+      },
+      {
+        "unit": "2",
+        "english": "brother",
+        "chinese": "哥；弟"
+      },
+      {
+        "unit": "2",
+        "english": "baby",
+        "chinese": "婴儿"
+      },
+      {
+        "unit": "2",
+        "english": "uncle",
+        "chinese": "舅父；叔父；伯父；姑父；姨夫"
+      },
+      {
+        "unit": "2",
+        "english": "aunt",
+        "chinese": "姑母；姨母；伯母；婶母；舅母"
+      },
+      {
+        "unit": "2",
+        "english": "some",
+        "chinese": "一些"
+      },
+      {
+        "unit": "2",
+        "english": "small",
+        "chinese": "小的"
+      },
+      {
+        "unit": "3",
+        "english": "like",
+        "chinese": "喜欢"
+      },
+      {
+        "unit": "3",
+        "english": "dog",
+        "chinese": "狗"
+      },
+      {
+        "unit": "3",
+        "english": "pet",
+        "chinese": "宠物"
+      },
+      {
+        "unit": "3",
+        "english": "cat",
+        "chinese": "猫"
+      },
+      {
+        "unit": "3",
+        "english": "fish",
+        "chinese": "鱼；鱼肉"
+      },
+      {
+        "unit": "3",
+        "english": "bird",
+        "chinese": "鸟"
+      },
+      {
+        "unit": "3",
+        "english": "rabbit",
+        "chinese": "兔"
+      },
+      {
+        "unit": "3",
+        "english": "go",
+        "chinese": "去；走"
+      },
+      {
+        "unit": "3",
+        "english": "zoo",
+        "chinese": "动物园"
+      },
+      {
+        "unit": "3",
+        "english": "fox",
+        "chinese": "狐狸"
+      },
+      {
+        "unit": "3",
+        "english": "Miss",
+        "chinese": "女士"
+      },
+      {
+        "unit": "3",
+        "english": "panda",
+        "chinese": "大熊猫"
+      },
+      {
+        "unit": "3",
+        "english": "red panda",
+        "chinese": "小熊猫"
+      },
+      {
+        "unit": "3",
+        "english": "cute",
+        "chinese": "可爱的"
+      },
+      {
+        "unit": "3",
+        "english": "monkey",
+        "chinese": "猴子"
+      },
+      {
+        "unit": "3",
+        "english": "tiger",
+        "chinese": "老虎"
+      },
+      {
+        "unit": "3",
+        "english": "elephant",
+        "chinese": "大象"
+      },
+      {
+        "unit": "3",
+        "english": "lion",
+        "chinese": "狮子"
+      },
+      {
+        "unit": "3",
+        "english": "giraffe",
+        "chinese": "长颈鹿"
+      },
+      {
+        "unit": "3",
+        "english": "tall",
+        "chinese": "高的"
+      },
+      {
+        "unit": "3",
+        "english": "fast",
+        "chinese": "快的"
+      },
+      {
+        "unit": "4",
+        "english": "apple",
+        "chinese": "苹果"
+      },
+      {
+        "unit": "4",
+        "english": "banana",
+        "chinese": "香蕉"
+      },
+      {
+        "unit": "4",
+        "english": "farm",
+        "chinese": "农场"
+      },
+      {
+        "unit": "4",
+        "english": "air",
+        "chinese": "空气"
+      },
+      {
+        "unit": "4",
+        "english": "orange",
+        "chinese": "橙子"
+      },
+      {
+        "unit": "4",
+        "english": "grape",
+        "chinese": "葡萄"
+      },
+      {
+        "unit": "4",
+        "english": "school",
+        "chinese": "学校"
+      },
+      {
+        "unit": "4",
+        "english": "garden",
+        "chinese": "花园"
+      },
+      {
+        "unit": "4",
+        "english": "need",
+        "chinese": "需要"
+      },
+      {
+        "unit": "4",
+        "english": "water",
+        "chinese": "给……浇水；水"
+      },
+      {
+        "unit": "4",
+        "english": "flower",
+        "chinese": "花；花朵"
+      },
+      {
+        "unit": "4",
+        "english": "grass",
+        "chinese": "草；草地"
+      },
+      {
+        "unit": "4",
+        "english": "plant",
+        "chinese": "种植；植物"
+      },
+      {
+        "unit": "4",
+        "english": "new",
+        "chinese": "新的"
+      },
+      {
+        "unit": "4",
+        "english": "tree",
+        "chinese": "树"
+      },
+      {
+        "unit": "4",
+        "english": "sun",
+        "chinese": "阳光；太阳"
+      },
+      {
+        "unit": "4",
+        "english": "give",
+        "chinese": "给"
+      },
+      {
+        "unit": "4",
+        "english": "us",
+        "chinese": "我们"
+      },
+      {
+        "unit": "4",
+        "english": "them",
+        "chinese": "他们"
+      },
+      {
+        "unit": "5",
+        "english": "colour",
+        "chinese": "颜色"
+      },
+      {
+        "unit": "5",
+        "english": "orange",
+        "chinese": "橙红色；橙红色的"
+      },
+      {
+        "unit": "5",
+        "english": "green",
+        "chinese": "绿色；绿色的"
+      },
+      {
+        "unit": "5",
+        "english": "red",
+        "chinese": "红色；红色的"
+      },
+      {
+        "unit": "5",
+        "english": "blue",
+        "chinese": "蓝色；蓝色的"
+      },
+      {
+        "unit": "5",
+        "english": "make",
+        "chinese": "使出现；做"
+      },
+      {
+        "unit": "5",
+        "english": "purple",
+        "chinese": "紫色；紫色的"
+      },
+      {
+        "unit": "5",
+        "english": "brown",
+        "chinese": "棕色；棕色的"
+      },
+      {
+        "unit": "5",
+        "english": "bear",
+        "chinese": "熊"
+      },
+      {
+        "unit": "5",
+        "english": "yellow",
+        "chinese": "黄色；黄色的"
+      },
+      {
+        "unit": "5",
+        "english": "duck",
+        "chinese": "鸭"
+      },
+      {
+        "unit": "5",
+        "english": "sea",
+        "chinese": "海；海洋"
+      },
+      {
+        "unit": "5",
+        "english": "pink",
+        "chinese": "粉色；粉色的"
+      },
+      {
+        "unit": "5",
+        "english": "draw",
+        "chinese": "画"
+      },
+      {
+        "unit": "5",
+        "english": "white",
+        "chinese": "白色；白色的"
+      },
+      {
+        "unit": "5",
+        "english": "black",
+        "chinese": "黑色；黑色的"
+      },
+      {
+        "unit": "6",
+        "english": "old",
+        "chinese": "(多少)岁；年纪；旧的"
+      },
+      {
+        "unit": "6",
+        "english": "five",
+        "chinese": "五"
+      },
+      {
+        "unit": "6",
+        "english": "year",
+        "chinese": "年纪；年"
+      },
+      {
+        "unit": "6",
+        "english": "one",
+        "chinese": "一"
+      },
+      {
+        "unit": "6",
+        "english": "two",
+        "chinese": "二"
+      },
+      {
+        "unit": "6",
+        "english": "three",
+        "chinese": "三"
+      },
+      {
+        "unit": "6",
+        "english": "four",
+        "chinese": "四"
+      },
+      {
+        "unit": "6",
+        "english": "ten",
+        "chinese": "十"
+      },
+      {
+        "unit": "6",
+        "english": "six",
+        "chinese": "六"
+      },
+      {
+        "unit": "6",
+        "english": "seven",
+        "chinese": "七"
+      },
+      {
+        "unit": "6",
+        "english": "eight",
+        "chinese": "八"
+      },
+      {
+        "unit": "6",
+        "english": "nine",
+        "chinese": "九"
+      },
+      {
+        "unit": "6",
+        "english": "o'clock",
+        "chinese": "(表示整点)……点钟"
+      },
+      {
+        "unit": "6",
+        "english": "cut",
+        "chinese": "切块"
+      },
+      {
+        "unit": "6",
+        "english": "piece",
+        "chinese": "块；片"
+      },
+      {
+        "unit": "6",
+        "english": "eat",
+        "chinese": "吃"
+      },
+      {
+        "unit": "6",
+        "english": "cake",
+        "chinese": "蛋糕"
+      }
+    ]
+  }
+  ]
