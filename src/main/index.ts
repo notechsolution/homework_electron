@@ -9,15 +9,16 @@ import indexPreload from '/@preload/index'
 import indexHtmlUrl from '/@renderer/index.html'
 // import sideHtmlUrl from '/@renderer/side.html'
 import logoUrl from '/@static/logo.png'
+import { join } from 'path';
+import { readFileSync } from 'fs';
 
 async function main() {
   const logger = new Logger()
   logger.initialize(app.getPath('userData'))
-  initialize(logger)
   app.whenReady().then(() => {
     const main = createWindow()
-
     // const [x, y] = main.getPosition()
+
     // const side = createSecondWindow()
     // side.setPosition(x + 800 + 5, y)
     main.maximize();
@@ -32,6 +33,11 @@ async function main() {
     main.on('blur', () => {
       globalShortcut.unregister('CommandOrControl+F')
     })
+
+    // Load email configuration
+    const configPath = join(__dirname, 'config/config.json');
+    const config = JSON.parse(readFileSync(configPath, 'utf-8'));
+    initialize(logger, config)
   })
   // thread_worker example
   createBaseWorker({ workerData: 'worker world' }).on('message', (message) => {

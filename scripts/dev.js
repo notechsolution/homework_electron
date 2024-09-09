@@ -12,7 +12,9 @@ const chalk = require('chalk')
 const { watch } = require('rollup')
 const { EOL } = require('os')
 const { loadRollupConfig } = require('./util')
-const { remove } = require('fs-extra')
+const { remove , copyFile,
+  ensureDir
+} = require('fs-extra')
 
 let manualRestart = false
 
@@ -140,6 +142,8 @@ async function loadMainConfig(config) {
  * Main method of this script
  */
 async function main() {
+  await ensureDir(join(__dirname, '../dist/config'));
+  await copyFile(join(__dirname, '../config/config.json'), join(__dirname, '../dist/config/config.json'))
   const [mainConfig] = await loadRollupConfig()
 
   devServer = createSocketServer((sock) => {

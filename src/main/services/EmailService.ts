@@ -9,9 +9,11 @@ export class EmailService extends Service {
 
   private transporter: any
 
-  constructor(logger: Logger) {
+  constructor(logger: Logger, config: any) {
     super(logger);
-
+    if (config) {
+      this.transporter = nodemailer.createTransport(config?.email);
+    }
   }
 
   /**
@@ -19,6 +21,9 @@ export class EmailService extends Service {
    */
   async sendEmail(to: string, subject: string, text: string, html?: string, attachment?: { filename: string, content: ArrayBuffer }[]) {
     console.log('Sending email to %s with subject %s', to, subject);
+    if(!this.transporter) {
+      throw new Error('Email service not initialized');
+    }
     const mailOptions = {
       from: 'lezhi.zeng@163.com', // Replace with your sender details
       to,

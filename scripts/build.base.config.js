@@ -18,11 +18,13 @@ const config = {
   //   owner: '',
   //   repo: ''
   // }],
-  files: [
-    // don't include node_modules as all js modules are bundled into production js by rollup
-    // unless you want to prevent some module to bundle up
-    // list them below
-  ]
+  // files: [
+  //   // don't include node_modules as all js modules are bundled into production js by rollup
+  //   // unless you want to prevent some module to bundle up
+  //   // list them below
+  //   'dist/**/*',
+  //   'config/emailConfig.json'
+  // ]
 }
 
 module.exports = config

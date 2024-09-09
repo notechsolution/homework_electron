@@ -99,9 +99,8 @@ const saveAsPDF = () => {
     }
   };
   html2pdf().set(opt).from(element).outputPdf('arraybuffer').then(function(pdf) {
-    console.log('pdf===========================');
-    const filename = `dictation-${moment(search.value.today).format('YYYY-MM-DD')}.pdf`;
-    sendEmail('lames.zeng@oocl.com', 'Testing', 'Testing', null, { filename, content: pdf });
+    const filename = `单词-${moment(search.value.today).format('YYYY-MM-DD')}.pdf`;
+    sendEmail('dng71248p3jhh2@print.rpt.epson.com.cn', filename, '单词练习', null, { filename, content: pdf });
     showInlineTitle.value = false;
   });
   // html2pdf().set(opt).from(element).save();
@@ -165,8 +164,8 @@ const saveAsPDF = () => {
 
         <el-row justify="end">
           <el-button type="primary" @click="generate">生成</el-button>
-          <el-button @click="print">打印</el-button>
-          <el-button @click="saveAsPDF">保存为PDF</el-button>
+          <el-button @click="print">本地打印</el-button>
+          <el-button @click="saveAsPDF">远程打印</el-button>
         </el-row>
       </el-form>
     </div>

@@ -24,13 +24,13 @@ let _services!: Services
  *
  * @param logger The simple app logger
  */
-export function initialize(logger: Logger) {
+export function initialize(logger: Logger, config: any) {
   _initialize({
     BaseService: new BaseService(logger),
     FooService: new FooService(logger),
     AzureService: new AzureService(logger),
     // FileService: new FileService(logger),
-    EmailService: new EmailService(logger)
+    EmailService: new EmailService(logger, config)
   })
 }
 

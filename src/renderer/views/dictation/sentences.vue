@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue';
 import printJS from 'print-js';
 import moment from 'moment';
 import html2pdf from 'html2pdf.js';
+import { sendEmail } from '/@/service/email';
 
 const sentences = ref([{
   count: 2,
@@ -12,15 +13,20 @@ const sentences = ref([{
 
 const today = ref(moment().toDate());
 const groups = ref([])
+const showInlineTitle = ref(false);
 // print the section of dictation-paper
 const print = () => {
   document.title = `${document.title}-${moment(today.value).format('YYYY-MM-DD')}`;
+  showInlineTitle.value = false;
   printJS({
     printable: 'dictation-page',
     type: 'html',
     targetStyles: ['*'],
     header: '英语句子练习纸',
     headerStyle: 'font-size: 22px; text-align: center; margin-top:-25px; margin-bottom: 10px; letter-spacing: 5px;',
+    onPrintDialogClose: () => {
+      showInlineTitle.value = true;
+  }
   });
 }
 
@@ -46,15 +52,35 @@ onMounted(() => {
 })
 
 const saveAsPDF = () => {
+  showInlineTitle.value = true;
   const element = document.getElementById('dictation-page');
-  html2pdf().from(element).save();
+  const opt = {
+    margin: [0.1, 0.3, 0.1, 0.3],
+    filename: 'myfile.pdf',
+    image: {
+      type: 'jpeg',
+      quality: 1
+    },
+    html2canvas: { scale: 2 },
+    jsPDF: {
+      unit: 'in',
+      format: 'a4',
+      orientation: 'portrait'
+    }
+  };
+  html2pdf().set(opt).from(element).outputPdf('arraybuffer').then(function(pdf) {
+    const filename = `句子-${moment(today.value).format('YYYY-MM-DD')}.pdf`;
+    // sendEmail('lames.zeng@oocl.com', filename, '句子练习', null, { filename, content: pdf });
+    sendEmail('dng71248p3jhh2@print.rpt.epson.com.cn', filename, '句子练习', null, { filename, content: pdf });
+    showInlineTitle.value = false;
+  });
 }
 </script>
 
 <template>
   <div>
     <div class="search-section">
-      <el-row style="width:80%;">
+      <el-row style="width:100%;">
         <el-col :span="16">
           <el-row>
             <el-form>
@@ -88,11 +114,11 @@ const saveAsPDF = () => {
         </el-col>
         <el-col :span="8">
           <el-row justify="end">
-            <el-button type="success" @click="addSentence(2)">增加问答句</el-button>
-            <el-button type="success" @click="addSentence(1)">增加陈述句</el-button>
+            <el-button type="success" @click="addSentence(2)">加问答句</el-button>
+            <el-button type="success" @click="addSentence(1)">加陈述句</el-button>
             <el-button type="primary" @click="generate">生成</el-button>
-            <el-button @click="print">打印</el-button>
-            <el-button @click="saveAsPDF">保存为PDF</el-button>
+            <el-button @click="print">本地打印</el-button>
+            <el-button @click="saveAsPDF">远程打印</el-button>
           </el-row>
         </el-col>
 
@@ -100,6 +126,7 @@ const saveAsPDF = () => {
 
     </div>
     <div class="dictation-paper" id="dictation-page" v-if="groups.length>0">
+      <div class="dictation-title" v-if="showInlineTitle">英语单词练习纸</div>
       <div class="dictation-paper-header">
         <div class="name-group">
           <div class="name">姓名：</div>
@@ -194,7 +221,7 @@ const saveAsPDF = () => {
 }
 
 .search-section {
-  display: flex;
+  //display: flex;
   margin: 20px;
   margin-bottom: 0;
   align-items: center;
@@ -208,10 +235,10 @@ const saveAsPDF = () => {
 }
 
 .dictation-title {
-  font-size: 22px;
+  font-size: 20px;
   text-align: center;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   letter-spacing: 5px;
 }
 
