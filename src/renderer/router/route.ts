@@ -41,7 +41,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           isKeepAlive: true,
           isAffix: true,
           isIframe: false,
-          roles: ['admin', 'common'],
+          roles: ['admin', 'teacher'],
           icon: 'iconfont icon-shouye'
         }
       },
@@ -56,7 +56,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           isKeepAlive: true,
           isAffix: false,
           isIframe: false,
-          roles: ['admin', 'common'],
+          roles: ['admin', 'teacher'],
           icon: 'ele-Service'
         },
         children: [
@@ -71,7 +71,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
               isKeepAlive: true,
               isAffix: false,
               isIframe: false,
-              roles: ['admin', 'common'],
+              roles: ['admin', 'teacher'],
               icon: 'ele-Cloudy'
             }
           },
@@ -86,7 +86,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
               isKeepAlive: true,
               isAffix: false,
               isIframe: false,
-              roles: ['admin', 'common'],
+              roles: ['admin', 'teacher'],
               icon: 'ele-Pouring'
             }
           }]
@@ -102,7 +102,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
           isKeepAlive: true,
           isAffix: false,
           isIframe: false,
-          roles: ['admin', 'common'],
+          roles: ['admin', 'doctor'],
           icon: 'ele-Calendar'
         }
       }

@@ -27,26 +27,26 @@
 				</template>
 			</el-input>
 		</el-form-item>
-		<el-form-item class="login-animation3">
-			<el-col :span="15">
-				<el-input
-					type="text"
-					maxlength="4"
-					:placeholder="$t('message.account.accountPlaceholder3')"
-					v-model="ruleForm.code"
-					clearable
-					autocomplete="off"
-				>
-					<template #prefix>
-						<el-icon class="el-input__icon"><ele-Position /></el-icon>
-					</template>
-				</el-input>
-			</el-col>
-			<el-col :span="1"></el-col>
-			<el-col :span="8">
-				<el-button class="login-content-code">1234</el-button>
-			</el-col>
-		</el-form-item>
+<!--		<el-form-item class="login-animation3">-->
+<!--			<el-col :span="15">-->
+<!--				<el-input-->
+<!--					type="text"-->
+<!--					maxlength="4"-->
+<!--					:placeholder="$t('message.account.accountPlaceholder3')"-->
+<!--					v-model="ruleForm.code"-->
+<!--					clearable-->
+<!--					autocomplete="off"-->
+<!--				>-->
+<!--					<template #prefix>-->
+<!--						<el-icon class="el-input__icon"><ele-Position /></el-icon>-->
+<!--					</template>-->
+<!--				</el-input>-->
+<!--			</el-col>-->
+<!--			<el-col :span="1"></el-col>-->
+<!--			<el-col :span="8">-->
+<!--				<el-button class="login-content-code">1234</el-button>-->
+<!--			</el-col>-->
+<!--		</el-form-item>-->
 		<el-form-item class="login-animation4">
 			<el-button type="primary" class="login-content-submit" round @click="onSignIn" :loading="loading.signIn">
 				<span>{{ $t('message.account.accountBtnText') }}</span>
@@ -65,6 +65,7 @@ import { initBackEndControlRoutes } from '/@/router/backEnd';
 import { useStore } from '/@/store/index';
 import { Session } from '/@/utils/storage';
 import { formatAxis } from '/@/utils/formatTime';
+import { signIn } from '/@/service/login';
 export default defineComponent({
 	name: 'loginAccount',
 	setup() {
@@ -75,9 +76,9 @@ export default defineComponent({
 		const state = reactive({
 			isShowPassword: false,
 			ruleForm: {
-				userName: 'admin',
-				password: '123456',
-				code: '1234',
+				userName: '',
+				password: '',
+				code: '',
 			},
 			loading: {
 				signIn: false,
@@ -91,33 +92,27 @@ export default defineComponent({
 		const onSignIn = async () => {
 			// 模拟数据
 			state.loading.signIn = true;
-			let defaultRoles: Array<string> = [];
 			let defaultAuthBtnList: Array<string> = [];
-			// admin 页面权限标识，对应路由 meta.roles，用于控制路由的显示/隐藏
-			let adminRoles: Array<string> = ['admin'];
-			// admin 按钮权限标识
-			let adminAuthBtnList: Array<string> = ['btn.add', 'btn.del', 'btn.edit', 'btn.link'];
-			// test 页面权限标识，对应路由 meta.roles，用于控制路由的显示/隐藏
-			let testRoles: Array<string> = ['common'];
-			// test 按钮权限标识
-			let testAuthBtnList: Array<string> = ['btn.add', 'btn.link'];
-			// 不同用户模拟不同的用户权限
-			if (state.ruleForm.userName === 'admin') {
-				defaultRoles = adminRoles;
-				defaultAuthBtnList = adminAuthBtnList;
-			} else {
-				defaultRoles = testRoles;
-				defaultAuthBtnList = testAuthBtnList;
-			}
+      const user = await signIn(state.ruleForm.userName, state.ruleForm.password);
+      if(!user) {
+        state.loading.signIn = false;
+        ElMessage({
+          message: '用户名或密码有错，请重试！',
+          type: 'error',
+          duration: 5000,
+          showClose: true
+        });
+        return;
+      }
 			// 用户信息模拟数据
 			const userInfos = {
-				userName: state.ruleForm.userName,
+				userName: user.userName,
 				photo:
 					state.ruleForm.userName === 'admin'
 						? 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif'
 						: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
 				time: new Date().getTime(),
-				roles: defaultRoles,
+				roles: user.roles,
 				authBtnList: defaultAuthBtnList,
 			};
 			// 存储 token 到浏览器缓存

@@ -3,9 +3,9 @@ import { Logger } from '../logger'
 import { AzureService } from './AzureService'
 import { BaseService } from './BaseService'
 import { FooService } from './FooService'
-import { FileService } from './FileService'
 import { INJECTIONS_SYMBOL } from './Service'
 import { EmailService } from './EmailService';
+import { LoginService } from './LoginService';
 
 /**
  * All services definition
@@ -14,7 +14,8 @@ export interface Services {
   FooService: FooService,
   BaseService: BaseService,
   AzureService: AzureService,
-  EmailService: EmailService
+  EmailService: EmailService,
+  LoginService:LoginService
 }
 
 let _services!: Services
@@ -29,6 +30,7 @@ export function initialize(logger: Logger, config: any) {
     BaseService: new BaseService(logger),
     FooService: new FooService(logger),
     AzureService: new AzureService(logger),
+    LoginService: new LoginService(logger),
     // FileService: new FileService(logger),
     EmailService: new EmailService(logger, config.mail)
   })

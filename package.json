@@ -68,7 +68,8 @@
     "@azure/identity",
     "dotenv",
     "lodash",
-    "swagger-editor-dist"
+    "swagger-editor-dist",
+    "nodemailer"
   ],
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",
