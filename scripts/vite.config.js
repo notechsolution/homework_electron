@@ -36,7 +36,7 @@ const config = {
       '@azure/identity',
       'dotenv'
   ],
-    include: ['element-plus/lib/locale/lang/zh-cn', 'element-plus/lib/locale/lang/en', 'element-plus/lib/locale/lang/zh-tw']
+    include: ['element-plus/es/locale/lang/zh-cn', 'element-plus/es/locale/lang/en', 'element-plus/es/locale/lang/zh-tw']
   },
   // @ts-ignore
   plugins: [vue()],

@@ -3,7 +3,7 @@ import { onMounted, ref } from 'vue';
 import printJS from 'print-js';
 import moment from 'moment';
 import html2pdf from 'html2pdf.js';
-import { sendEmail } from '/@/service/email';
+import { sendEmail,isMailServiceReady } from '/@/service/email';
 
 const sentences = ref([{
   count: 2,
@@ -14,6 +14,7 @@ const sentences = ref([{
 const today = ref(moment().toDate());
 const groups = ref([])
 const showInlineTitle = ref(false);
+const enableMailPrint = ref(false);
 // print the section of dictation-paper
 const print = () => {
   document.title = `${document.title}-${moment(today.value).format('YYYY-MM-DD')}`;
@@ -49,6 +50,12 @@ onMounted(() => {
   if (sentencesInLocal) {
     sentences.value = JSON.parse(sentencesInLocal);
   }
+  isMailServiceReady().then(res => {
+    console.log('mail service readiness:' + res);
+    enableMailPrint.value = res;
+  }).catch(error => {
+    console.error(error);
+  });
 })
 
 const saveAsPDF = () => {
@@ -70,8 +77,7 @@ const saveAsPDF = () => {
   };
   html2pdf().set(opt).from(element).outputPdf('arraybuffer').then(function(pdf) {
     const filename = `句子-${moment(today.value).format('YYYY-MM-DD')}.pdf`;
-    // sendEmail('lames.zeng@oocl.com', filename, '句子练习', null, { filename, content: pdf });
-    sendEmail('dng71248p3jhh2@print.rpt.epson.com.cn', filename, '句子练习', null, { filename, content: pdf });
+    sendEmail(null, filename, '句子练习', null, { filename, content: pdf });
     showInlineTitle.value = false;
   });
 }
@@ -118,7 +124,7 @@ const saveAsPDF = () => {
             <el-button type="success" @click="addSentence(1)">加陈述句</el-button>
             <el-button type="primary" @click="generate">生成</el-button>
             <el-button @click="print">本地打印</el-button>
-            <el-button @click="saveAsPDF">远程打印</el-button>
+            <el-button @click="saveAsPDF" v-if="enableMailPrint">远程打印</el-button>
           </el-row>
         </el-col>
 

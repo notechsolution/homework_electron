@@ -132,3 +132,4 @@ dist
 /build/*.exe
 /build/*.blockmap
 /build/*.zip
+/config/config-local.json

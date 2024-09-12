@@ -4,7 +4,10 @@ const { join } = require('path')
 const { build } = require('vite')
 const chalk = require('chalk')
 const { build: electronBuilder } = require('electron-builder')
-const { stat, remove, writeFile } = require('fs-extra')
+const { stat, remove, writeFile,
+  ensureDir,
+  copyFile
+} = require('fs-extra')
 const { rollup } = require('rollup')
 const { loadRollupConfig } = require('./util')
 
@@ -120,7 +123,6 @@ async function start() {
   const [mainConfig] = await loadRollupConfig()
 
   await remove(join(__dirname, '../dist'))
-
   console.log(chalk.bold.underline('Build main process & preload'))
   const startTime = Date.now()
   await buildMain(mainConfig)

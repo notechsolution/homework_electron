@@ -1,7 +1,7 @@
 import { createI18n } from 'vue-i18n';
-import zhcnLocale from 'element-plus/lib/locale/lang/zh-cn';
-import enLocale from 'element-plus/lib/locale/lang/en';
-import zhtwLocale from 'element-plus/lib/locale/lang/zh-tw';
+import zhcnLocale from 'element-plus/es/locale/lang/zh-cn';
+import enLocale from 'element-plus/es/locale/lang/en';
+import zhtwLocale from 'element-plus/es/locale/lang/zh-tw';
 import { store } from '/@/store/index';
 
 import nextZhcn from '/@/i18n/lang/zh-cn';

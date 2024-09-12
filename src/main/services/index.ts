@@ -30,7 +30,7 @@ export function initialize(logger: Logger, config: any) {
     FooService: new FooService(logger),
     AzureService: new AzureService(logger),
     // FileService: new FileService(logger),
-    EmailService: new EmailService(logger, config)
+    EmailService: new EmailService(logger, config.mail)
   })
 }
 

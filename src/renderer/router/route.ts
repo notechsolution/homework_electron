@@ -46,154 +46,17 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
         }
       },
       {
-        path: '/troubleshooter',
-        name: 'troubleshooter',
+        path: '/dictation',
+        name: 'dictation',
         component: () => import('/@/layout/routerView/parent.vue'),
         meta: {
-          title: 'message.router.troubleshooter',
-          isLink: '',
-          isHide: false,
-          isKeepAlive: true,
-          isAffix: false,
-          isIframe: false,
-          roles: ['admin'],
-          icon: 'iconfont icon-xianshimima'
-        },
-        children: [
-          {
-            path: '/troubleshooter/transaction',
-            name: 'transaction',
-            component: () => import('/@/views/troubleshooter/transaction/index.vue'),
-            meta: {
-              title: 'message.router.transaction',
-              isLink: '',
-              isHide: false,
-              isKeepAlive: true,
-              isAffix: false,
-              isIframe: false,
-              roles: ['admin', 'common'],
-              icon: 'ele-Cherry'
-            }
-          },
-          {
-            path: '/troubleshooter/dockerImage',
-            name: 'dockerImage',
-            component: () => import('/@/views/troubleshooter/dockerImage/index.vue'),
-            meta: {
-              title: 'message.router.dockerImage',
-              isLink: '',
-              isHide: false,
-              isKeepAlive: true,
-              isAffix: false,
-              isIframe: false,
-              roles: ['admin', 'common'],
-              icon: 'ele-Wallet'
-            }
-          }
-        ]
-      },
-      {
-        path: '/devTools',
-        name: 'devTools',
-        component: () => import('/@/layout/routerView/parent.vue'),
-        meta: {
-          title: 'message.router.devTools',
-          isLink: '',
-          isHide: false,
-          isKeepAlive: true,
-          isAffix: false,
-          isIframe: false,
-          roles: ['admin'],
-          icon: 'iconfont icon-xitongshezhi'
-        },
-        children: [
-          {
-            path: '/jwt',
-            name: 'jwt',
-            component: () => import('/@/views/devTools/jwt/index.vue'),
-            meta: {
-              title: 'message.router.jwt',
-              isLink: '',
-              isHide: false,
-              isKeepAlive: true,
-              isAffix: false,
-              isIframe: false,
-              roles: ['admin', 'common'],
-              icon: 'ele-Cherry'
-            }
-          },
-          {
-            path: '/swagger-editor',
-            name: 'swagger-editor',
-            component: () => import('/@/views/devTools/swaggerEditor/index.vue'),
-            meta: {
-              title: 'message.router.swaggerEditor',
-              isLink: '',
-              isHide: false,
-              isKeepAlive: true,
-              isAffix: false,
-              isIframe: false,
-              roles: ['admin', 'common'],
-              icon: 'ele-Cherry'
-            }
-          },
-          {
-            path: '/base64',
-            name: 'base64',
-            component: () => import('/@/views/devTools/base64/index.vue'),
-            meta: {
-              title: 'message.router.base64',
-              isLink: '',
-              isHide: false,
-              isKeepAlive: true,
-              isAffix: false,
-              isIframe: false,
-              roles: ['admin', 'common'],
-              icon: 'ele-Cherry'
-            }
-          },
-          {
-            path: '/url',
-            name: 'url',
-            component: () => import('/@/views/devTools/url/index.vue'),
-            meta: {
-              title: 'message.router.url',
-              isLink: '',
-              isHide: false,
-              isKeepAlive: true,
-              isAffix: false,
-              isIframe: false,
-              roles: ['admin', 'common'],
-              icon: 'ele-Cherry'
-            }
-          }]
-      }, {
-        path: '/markdown',
-        name: 'markdown',
-        component: () => import('/@/views/markdown/index.vue'),
-        meta: {
-          title: 'message.router.markdown',
+          title: 'message.router.dictation',
           isLink: '',
           isHide: false,
           isKeepAlive: true,
           isAffix: false,
           isIframe: false,
           roles: ['admin', 'common'],
-          icon: 'fa fa-maxcdn'
-        }
-      },
-      {
-        path: '/dictation',
-        name: 'dictation',
-        component: () => import('/@/layout/routerView/parent.vue'),
-        meta: {
-          title: '听写',
-          isLink: '',
-          isHide: false,
-          isKeepAlive: true,
-          isAffix: false,
-          isIframe: false,
-          roles: ['admin','common'],
           icon: 'ele-Service'
         },
         children: [
@@ -202,7 +65,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
             name: 'words',
             component: () => import('/@/views/dictation/words.vue'),
             meta: {
-              title: '单词听写',
+              title: 'message.router.words',
               isLink: '',
               isHide: false,
               isKeepAlive: true,
@@ -217,7 +80,7 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
             name: 'sentences',
             component: () => import('/@/views/dictation/sentences.vue'),
             meta: {
-              title: '句子听写',
+              title: 'message.router.sentences',
               isLink: '',
               isHide: false,
               isKeepAlive: true,
@@ -227,6 +90,21 @@ export const dynamicRoutes: Array<RouteRecordRaw> = [
               icon: 'ele-Pouring'
             }
           }]
+      },
+      {
+        path: '/scheduling',
+        name: 'scheduling',
+        component: () => import('/@/views/scheduling/index.vue'),
+        meta: {
+          title: 'message.router.scheduling',
+          isLink: '',
+          isHide: false,
+          isKeepAlive: true,
+          isAffix: false,
+          isIframe: false,
+          roles: ['admin', 'common'],
+          icon: 'ele-Calendar'
+        }
       }
     ]
   }

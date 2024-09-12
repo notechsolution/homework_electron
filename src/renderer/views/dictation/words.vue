@@ -5,7 +5,7 @@ import printJS from 'print-js';
 import _ from 'lodash';
 import html2pdf from 'html2pdf.js';
 import moment from 'moment';
-import { sendEmail } from '/@/service/email';
+import { isMailServiceReady, sendEmail } from '/@/service/email';
 
 const groups = ref([])
 const search = ref({
@@ -28,6 +28,13 @@ onMounted(() => {
   getBooks().then((data) => {
     books.value = data;
     bookNames.value = data.map(item => item.name);
+  }).catch(error => {
+    console.error(error);
+  });
+
+  isMailServiceReady().then(res => {
+    console.log('mail service readiness:' + res);
+    enableMailPrint.value = res;
   }).catch(error => {
     console.error(error);
   });
@@ -81,6 +88,7 @@ const generate = () => {
 }
 
 const showInlineTitle = ref(false);
+const enableMailPrint = ref(false);
 const saveAsPDF = () => {
   showInlineTitle.value = true;
   const element = document.getElementById('dictation-page');
@@ -100,7 +108,7 @@ const saveAsPDF = () => {
   };
   html2pdf().set(opt).from(element).outputPdf('arraybuffer').then(function(pdf) {
     const filename = `单词-${moment(search.value.today).format('YYYY-MM-DD')}.pdf`;
-    sendEmail('dng71248p3jhh2@print.rpt.epson.com.cn', filename, '单词练习', null, { filename, content: pdf });
+    sendEmail(null, filename, '单词练习', null, { filename, content: pdf });
     showInlineTitle.value = false;
   });
   // html2pdf().set(opt).from(element).save();
@@ -165,7 +173,7 @@ const saveAsPDF = () => {
         <el-row justify="end">
           <el-button type="primary" @click="generate">生成</el-button>
           <el-button @click="print">本地打印</el-button>
-          <el-button @click="saveAsPDF">远程打印</el-button>
+          <el-button @click="saveAsPDF" v-if="enableMailPrint">远程打印</el-button>
         </el-row>
       </el-form>
     </div>

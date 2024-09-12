@@ -10,7 +10,7 @@ import indexHtmlUrl from '/@renderer/index.html'
 // import sideHtmlUrl from '/@renderer/side.html'
 import logoUrl from '/@static/logo.png'
 import { join } from 'path';
-import { readFileSync } from 'fs';
+import { readFileSync, existsSync } from 'fs';
 
 async function main() {
   const logger = new Logger()
@@ -35,8 +35,12 @@ async function main() {
     })
 
     // Load email configuration
-    const configPath = join(__dirname, 'config/config.json');
-    const config = JSON.parse(readFileSync(configPath, 'utf-8'));
+    const configPath = join(__dirname, 'config.json');
+    let config = {};
+    // check if configPath file exists
+    if (existsSync(configPath)) {
+      config = JSON.parse(readFileSync(configPath, 'utf-8'));
+    }
     initialize(logger, config)
   })
   // thread_worker example

@@ -1,0 +1,15 @@
+{
+  "mail": {
+    "from": "YOUR_EMAIL_FROM",
+    "to": "YOUR_EMAIL_TO",
+    "server": {
+      "host": "YOUR_EMAIL_HOST",
+      "port": 465,
+      "secure": true,
+      "auth": {
+        "user": "YOUR_EMAIL_USER",
+        "pass": "YOUR_EMAIL_PASS"
+      }
+    }
+  }
+}

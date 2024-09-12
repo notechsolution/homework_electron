@@ -3,6 +3,10 @@ export default {
 	router: {
 		home: '首页',
 		system: '系统设置',
+    scheduling: '排班日历',
+    dictation: '听写',
+    words: '单词听写',
+    sentences: '句子听写',
 		troubleshooter: '排查工具',
 		transaction: 'GSBN Transaction',
 		dockerImage: 'Docker Images',

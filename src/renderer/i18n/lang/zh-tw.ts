@@ -3,6 +3,10 @@ export default {
 	router: {
 		home: '首頁',
 		system: '系統設置',
+    scheduling: '排班日曆',
+    dictation: '聽寫',
+    words: '單詞聽寫',
+    sentences: '句子聽寫',
 		reference: '參考菜單',
 		troubleshooter: '排查工具',
 		transaction: 'GSBN Transaction',

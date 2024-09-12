@@ -3,6 +3,10 @@ export default {
 	router: {
 		home: 'Home',
 		system: 'System',
+    scheduling: 'Scheduling',
+    dictation: 'Dictation',
+    words: 'Words',
+    sentences: 'Sentences',
 		troubleshooter: 'Trouble Shooter',
 		transaction: 'GSBN Transaction',
 		dockerImage: 'Docker Images',

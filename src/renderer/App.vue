@@ -20,6 +20,7 @@ import CloseFull from '/@/layout/navBars/breadcrumb/closeFull.vue';
 import { FindInPage } from 'electron-find';
 const { ipcRenderer, remote } = (window as any)?.electron;
 
+
 export default defineComponent({
 	name: 'app',
 	components: { LockScreen, Setings, CloseFull },
