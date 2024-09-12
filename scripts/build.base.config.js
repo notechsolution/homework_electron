@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 
 /**
  * @type {import('electron-builder').Configuration}
@@ -25,6 +27,9 @@ const config = {
   //   'dist/**/*',
   //   'config/emailConfig.json'
   // ]
-}
+  extraFiles: [
+    'config/config.json'
+  ]
+};
 
-module.exports = config
+module.exports = config;

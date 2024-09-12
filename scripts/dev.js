@@ -142,8 +142,8 @@ async function loadMainConfig(config) {
  * Main method of this script
  */
 async function main() {
-  await ensureDir(join(__dirname, '../dist'))
-  await copyFile(join(__dirname, '../config/config-local.json'), join(__dirname, '../dist/config.json'))
+  await ensureDir(join(__dirname, '../dist/config'))
+  await copyFile(join(__dirname, '../config/config-local.json'), join(__dirname, '../dist/config/config.json'))
   const [mainConfig] = await loadRollupConfig()
 
   devServer = createSocketServer((sock) => {

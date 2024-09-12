@@ -4,6 +4,9 @@ directories:
   app: dist
 productName: ''
 appId: ''
+extraFiles:
+  - filter:
+      - config/config.json
 nsis:
   artifactName: ${productName}-Setup-${version}.${ext}
   oneClick: false

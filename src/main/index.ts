@@ -35,7 +35,7 @@ async function main() {
     })
 
     // Load email configuration
-    const configPath = join(__dirname, 'config.json');
+    const configPath = join(__dirname, 'config/config.json');
     let config = {};
     // check if configPath file exists
     if (existsSync(configPath)) {

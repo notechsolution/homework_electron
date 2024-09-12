@@ -4,6 +4,8 @@ import printJS from 'print-js';
 import moment from 'moment';
 import html2pdf from 'html2pdf.js';
 import { sendEmail,isMailServiceReady } from '/@/service/email';
+import { Delete } from '@element-plus/icons-vue';
+import _ from 'lodash';
 
 const sentences = ref([{
   count: 2,
@@ -43,6 +45,10 @@ const addSentence = (count) => {
     content1: '',
     content2: ''
   });
+}
+
+const removeSentence = (sentence) => {
+  _.remove(sentences.value, sentence);
 }
 
 onMounted(() => {
@@ -106,11 +112,13 @@ const saveAsPDF = () => {
                     <el-text size="default">回答：</el-text>
                     <el-input v-model="sentense.content2" placeholder="请输入回答" class="input-with-select" style="width: 360px"
                               size="large"></el-input>
+                    <el-button type="danger" :icon="Delete" circle size="small" style="margin-left: 10px" @click="removeSentence(sentense)"/>
                   </div>
                   <div v-if="sentense.count === 1">
                     <el-text>句子：</el-text>
                     <el-input v-model="sentense.content1" placeholder="请输入句子" class="input-with-select" style="width: 730px"
                               size="large"></el-input>
+                    <el-button type="danger" :icon="Delete" circle size="small" style="margin-left: 10px" @click="removeSentence(sentense)"/>
                   </div>
                 </div>
 
