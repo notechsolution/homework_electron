@@ -1,13 +1,22 @@
 import _ from 'lodash';
 import moment from 'moment';
 import { createAxiosService } from '/@/utils/request';
+import defaultHolidays from './backup';
 
 const getChineseHoliday = async () => {
   // get chinese holiday json file by this http url https://raw.githubusercontent.com/lanceliao/china-holiday-calender/master/holidayAPI.json
   const requestService = createAxiosService('https://www.shuyz.com');
-  const response = await requestService.get('/githubfiles/china-holiday-calender/master/holidayAPI.json');
+  let holidayData = defaultHolidays;
+  try {
+    const response = await requestService.get('/githubfiles/china-holiday-calender/master/holidayAPI.json');
+    if (response.status === 200 && !response.data) {
+      holidayData = response.data;
+    }
+  } catch (error) {
+    console.log('fetch holidays error:', error);
+  }
   // flat array  _.values(response.data['Years']) to get all holiday items
-  const items = _.flatten(_.values(response.data.Years));
+  const items = _.flatten(_.values(holidayData.Years));
 
   const holidays: { name: string; memo: string; duration: number; days: string[]; compDays: any }[] = [];
   items.forEach(item => {

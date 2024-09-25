@@ -1,8 +1,8 @@
-version: 1.0.0
+version: 1.0.1
 files:
-  - url: homework-Setup-1.0.0.exe
-    sha512: kqEocDgK/0g0NOAurNVZze6uGhdhTbDUejnuhxEbedaOP9e1y8c3L/QTzMjYvsPMch5Nc/7bsghI2LBnqKUMdA==
-    size: 71421514
-path: homework-Setup-1.0.0.exe
-sha512: kqEocDgK/0g0NOAurNVZze6uGhdhTbDUejnuhxEbedaOP9e1y8c3L/QTzMjYvsPMch5Nc/7bsghI2LBnqKUMdA==
-releaseDate: '2024-09-12T07:45:21.667Z'
+  - url: homework-Setup-1.0.1.exe
+    sha512: 7NlwzobH0/kDT4YpWVmhJWrTL5yQ1yGOGQiRDfmyOgJcRKgMFp0SouXgOxgIN2hQ4Rcij01JcxXmZjSdxpYh+A==
+    size: 68947642
+path: homework-Setup-1.0.1.exe
+sha512: 7NlwzobH0/kDT4YpWVmhJWrTL5yQ1yGOGQiRDfmyOgJcRKgMFp0SouXgOxgIN2hQ4Rcij01JcxXmZjSdxpYh+A==
+releaseDate: '2024-09-18T08:02:03.385Z'

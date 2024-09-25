@@ -1,6 +1,5 @@
 import { ipcMain } from 'electron'
 import { Logger } from '../logger'
-import { AzureService } from './AzureService'
 import { BaseService } from './BaseService'
 import { FooService } from './FooService'
 import { INJECTIONS_SYMBOL } from './Service'
@@ -13,7 +12,6 @@ import { LoginService } from './LoginService';
 export interface Services {
   FooService: FooService,
   BaseService: BaseService,
-  AzureService: AzureService,
   EmailService: EmailService,
   LoginService:LoginService
 }
@@ -29,7 +27,6 @@ export function initialize(logger: Logger, config: any) {
   _initialize({
     BaseService: new BaseService(logger),
     FooService: new FooService(logger),
-    AzureService: new AzureService(logger),
     LoginService: new LoginService(logger),
     // FileService: new FileService(logger),
     EmailService: new EmailService(logger, config.mail)

@@ -65,7 +65,7 @@ export default defineComponent({
       if (lunar.Terms) {
         return `${lunar.Terms}`;
       }
-      if (data.date.getDate() === 1) {
+      if (lunar.dayStr === '初一') {
         return `${lunar.monthStr}`;
       }
       return `${lunar.dayStr}`;

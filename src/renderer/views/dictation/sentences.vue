@@ -107,16 +107,16 @@ const saveAsPDF = () => {
                 <div v-for="(sentense, index) in sentences" style="margin-bottom: 5px">
                   <div v-if="sentense.count === 2">
                     <el-text size="default">问题：</el-text>
-                    <el-input v-model="sentense.content1" placeholder="请输入问题" class="input-with-select" style="width: 360px;margin-right: 10px"
+                    <el-input v-model="sentense.content1" placeholder="请输入问题" class="input-with-select" style="width: 300px;margin-right: 10px"
                               size="large"></el-input>
                     <el-text size="default">回答：</el-text>
-                    <el-input v-model="sentense.content2" placeholder="请输入回答" class="input-with-select" style="width: 360px"
+                    <el-input v-model="sentense.content2" placeholder="请输入回答" class="input-with-select" style="width: 300px"
                               size="large"></el-input>
                     <el-button type="danger" :icon="Delete" circle size="small" style="margin-left: 10px" @click="removeSentence(sentense)"/>
                   </div>
                   <div v-if="sentense.count === 1">
                     <el-text>句子：</el-text>
-                    <el-input v-model="sentense.content1" placeholder="请输入句子" class="input-with-select" style="width: 730px"
+                    <el-input v-model="sentense.content1" placeholder="请输入句子" class="input-with-select" style="width: 610px"
                               size="large"></el-input>
                     <el-button type="danger" :icon="Delete" circle size="small" style="margin-left: 10px" @click="removeSentence(sentense)"/>
                   </div>

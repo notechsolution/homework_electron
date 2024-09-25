@@ -27,21 +27,20 @@ const calculate = function () {
   if (criteria.value.current === null) {
     return;
   }
-  const current = moment(criteria.value.current);
   const range = criteria.value.months * 30;
   schedules.value = [];
   for (let i = 0; i < range / 24; i++) {
-    const next = current.add(i * criteria.value.interval, 'day');
+    const next = moment(criteria.value.current).add(i * criteria.value.interval, 'day');
     const dateStr = next.format('YYYY-MM-DD');
     const lunar = solarToLunar(next.year(), next.month() + 1, next.date());
     schedules.value.push({ date: next.toDate(), dateStr: dateStr, lunar: lunar });
   }
 
   // calendars should be arrays of each future month of criteria.value.months
-  const today = moment();
   calendars.value = [];
   for (let i = 0; i < criteria.value.months; i++) {
-    const next = today.add(i, 'month');
+    const next = moment().add(i, 'month');
+    next.date(1);
     calendars.value.push(next.toDate());
   }
 }
@@ -63,7 +62,7 @@ const renderSecondLine = function (data) {
   if (lunar.Terms) {
     return `${lunar.Terms}`;
   }
-  if (data.date.getDate() === 1) {
+  if (lunar.dayStr === '初一') {
     return `${lunar.monthStr}`;
   }
   return `${lunar.dayStr}`;

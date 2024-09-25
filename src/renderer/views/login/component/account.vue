@@ -1,5 +1,5 @@
 <template>
-	<el-form size="large" class="login-content-form">
+	<el-form size="large" class="login-content-form" @submit.native.prevent="onSignIn" @keydown.enter="onSignIn">
 		<el-form-item class="login-animation1">
 			<el-input type="text" :placeholder="$t('message.account.accountPlaceholder1')" v-model="ruleForm.userName" clearable autocomplete="off">
 				<template #prefix>
@@ -48,7 +48,7 @@
 <!--			</el-col>-->
 <!--		</el-form-item>-->
 		<el-form-item class="login-animation4">
-			<el-button type="primary" class="login-content-submit" round @click="onSignIn" :loading="loading.signIn">
+			<el-button type="primary" class="login-content-submit" round @click="onSignIn" :loading="loading.signIn" autofocus>
 				<span>{{ $t('message.account.accountBtnText') }}</span>
 			</el-button>
 		</el-form-item>
