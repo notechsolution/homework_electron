@@ -9,7 +9,8 @@ const getChineseHoliday = async () => {
   let holidayData = defaultHolidays;
   try {
     const response = await requestService.get('/githubfiles/china-holiday-calender/master/holidayAPI.json');
-    if (response.status === 200 && !response.data) {
+    // if response status is 200 and response data is not null
+    if (response.status === 200 && response.data) {
       holidayData = response.data;
     }
   } catch (error) {
@@ -34,6 +35,7 @@ const getChineseHoliday = async () => {
     }
     holidays.push(holiday);
   });
+  console.log('holidays:', holidays);
   return holidays;
 };
 

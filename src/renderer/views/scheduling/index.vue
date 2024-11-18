@@ -8,7 +8,7 @@ import { getChineseHoliday } from '/@/service/holiday/index';
 const schedules = ref([])
 const criteria = ref({
   current: new Date(),
-  interval: 24,
+  interval: 25,
   months: 3
 });
 const calendars = ref([]);
@@ -29,7 +29,7 @@ const calculate = function () {
   }
   const range = criteria.value.months * 30;
   schedules.value = [];
-  for (let i = 0; i < range / 24; i++) {
+  for (let i = 0; i < range / criteria.value.interval; i++) {
     const next = moment(criteria.value.current).add(i * criteria.value.interval, 'day');
     const dateStr = next.format('YYYY-MM-DD');
     const lunar = solarToLunar(next.year(), next.month() + 1, next.date());
